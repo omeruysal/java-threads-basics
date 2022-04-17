@@ -8,6 +8,9 @@ public class Main {
 
         producer.start(); // We can reach the start method because we extend it from Thread, as we know that we can reach the methods of parent class
         thread.start(); // Represent our consumer object
+        
+        producer.run(); // If we use run method instead of start then threads wait for each other. One thread is done, next one starts
+        thread.run();   // We have to use start method when we want concurrent threads
     }
 }
 
